@@ -3,10 +3,10 @@ Tensorflow Nightly GPU is not being updated for Windows, so here's a repo with l
 
 __All are compiled with CUDA 10.0__  
 
-| Date | Link | Python Version |
-|------|------|----------------|
-| 2019-01-08 | [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ) | Python 3.7.2 |
-| 2019-01-07 | [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg) | Python 3.6.6 |
+| Date | Link | Python Version | TF API Version |
+|------|------|----------------|----------------|
+| 2019-01-08 | [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ) | Python 3.7.2 | v1 |
+| 2019-01-07 | [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg) | Python 3.6.6 | v1 |
 
 ### I REPEAT, THESE ARE COMPILED WITH CUDA 10.0 ###
 
