@@ -12,8 +12,8 @@ They are also compiled for the later headers and libraries for MSVC 2017 (or sho
 
 I will chuck up a guide on how I got it to compile myself, since it required a bit of work FOR SOMETHING WHICH SHOULD FREAKING WORK OUT OF THE BOX... right?
 
-I am still trying to see if I can manage to get XLA to compile for Windows but it looks very unlikely.
-Earlier commits were closer to getting XLA to compile on windows than later commits were...
+I am still trying to see if I can manage to get XLA JIT to compile for Windows but it looks very unlikely.
+Earlier commits were closer to getting XLA JIT to compile on windows than later commits were...
 
 Two steps backwards, half a step forwards...
 
