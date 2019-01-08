@@ -1,9 +1,14 @@
 # tf-windows-gpu
 Tensorflow Nightly GPU is not being updated for Windows, so here's a repo with links to some compiled wheels I made myself.
 
-__All are compiled with CUDA 10.0__
+__All are compiled with CUDA 10.0__  
 
-## I REPEAT, THESE ARE COMPILED WITH CUDA 10.0 ##
+| Date | Link | Python Version |
+|------|------|----------------|
+| 2019-01-08 | [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ) | Python 3.7.2 |
+| 2019-01-07 | [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg) | Python 3.6.6 |
+
+### I REPEAT, THESE ARE COMPILED WITH CUDA 10.0 ###
 
 No CUDA 9.0 or 9.2.
 Somewhere in the commits of Tensorflow they updated it to CUDA 10.0 and later version of cuDNN, so you may have to get these.
@@ -25,13 +30,7 @@ Of course, they keep changing things in there as they work on their XLA JIT so m
 
 Practically everything is two steps backwards, half a step forwards...
 
-2019-01-08 => [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ) for Python 3.7.2
-
-2019-01-07 => [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg) for Python 3.6.6
-
-
-## Note: ##
-Also BAZEL is a piece of sh!t, whoever invented that junk should re-evaluate their life...
+#### Note: Also BAZEL is a piece of sh!t, whoever invented that junk should re-evaluate their life... ####
 
 Seriously, so many actual working build systems and they had to come up with a new one, which is:
 * Unnecessarily difficult to even get to start building;
