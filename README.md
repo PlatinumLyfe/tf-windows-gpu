@@ -18,6 +18,6 @@ Earlier commits were closer to getting XLA JIT to compile on windows than later 
 Two steps backwards, half a step forwards...
 
 
-2019-01-08 => [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ)
+2019-01-08 => [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ) for Python 3.7.2
 
-2019-01-07 => [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg)
+2019-01-07 => [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg) for Python 3.6.6
