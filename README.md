@@ -6,6 +6,8 @@ Not CUDA 9.0 or 9.2 since somewhere in the commits of Tensorflow, they updated i
 
 Also I have them compiled for Python 3.6.6 and Python 3.7.2, but may be dropping 3.6.6 soon since 3.7.2 seems a bit quicker.
 
+These are compiled with /favour:INTEL64, /fp:precise, /arch:AVX, /Ox, /DNOGDI, etc.
+
 They are also compiled for the later headers and libraries for MSVC 2017 (or should be at least) which means you may require the VS2017 VC++ redist - I can't know and I can't test.
 
 I will chuck up a guide on how I got it to compile myself, since it required a bit of work FOR SOMETHING WHICH SHOULD FREAKING WORK OUT OF THE BOX... right?
@@ -14,3 +16,8 @@ I am still trying to see if I can manage to get XLA to compile for Windows but i
 Earlier commits were closer to getting XLA to compile on windows than later commits were...
 
 Two steps backwards, half a step forwards...
+
+
+2019-01-08 => [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ)
+
+2019-01-07 => [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg)
