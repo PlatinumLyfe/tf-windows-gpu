@@ -42,7 +42,8 @@ Seriously, so many actual working build systems and they had to come up with a n
 * Relies on Java (which _would_ be okay for portability if it didn't end up relying on native compilers to do all the work anyway);
 * Vastly complex and indecipherable path, packages, etc.
 * Wastefully downloads and builds components that are ALREADY INSTALLED ON THE MACHINE AND IN THE PATH (such as LLVM, Swig, etc.)
-* Impossible to configure for toolchains and build systems... I mean why the hell would you make it so you have to create 3 different sections for a toolchain? Why not a folder with one configuration file per toolchain/compiler set?
-__* BAZEL IGNORES THE CONFIGURATION FILES ANYWAY IT TURNS OUT, SINCE I CHANGED THEM ALL TO USE THE VS2017 DIRECTORY AND FILES BUT IN THE bazel-out and bazel-tensorflow directories it ignores the changes and goes back to VS2015 build tools __
+* Impossible to configure for toolchains and build systems... I mean why the hell would you make it so you have to create 3 different sections for a toolchain? Why not a folder with one configuration file per toolchain/compiler set?  
+and the biggest issue:
+#### BAZEL IGNORES THE CONFIGURATION FILES ANYWAY IT TURNS OUT, SINCE I CHANGED THEM ALL TO USE THE VS2017 DIRECTORY AND FILES BUT IN THE bazel-out and bazel-tensorflow directories it ignores the changes and goes back to VS2015 build tools ####
 
 My suggestion for Google, drop Bazel completely or give it a total rethink and put it in the trash, shred the source code and pretend it never existed.
