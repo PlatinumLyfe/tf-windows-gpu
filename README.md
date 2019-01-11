@@ -3,10 +3,10 @@ Tensorflow Nightly GPU is not being updated for Windows, so here's a repo with l
 
 __All are compiled with CUDA 10.0__  
 
-| Date | Link | Python Version | TF API Version |
-|------|------|----------------|----------------|
-| 2019-01-08 | [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ) | Python 3.7.2 | v1 |
-| 2019-01-07 | [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg) | Python 3.6.6 | v1 |
+| Date | Link | Python Version | TF API Version | CUDA Compat |
+|------|------|----------------|----------------|-------------|
+| 2019-01-08 | [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ) | Python 3.7.2 | v1 | 6.1 |
+| 2019-01-07 | [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg) | Python 3.6.6 | v1 | 6.1 |
 
 ### I REPEAT, THESE ARE COMPILED WITH CUDA 10.0 ###
 
@@ -43,5 +43,6 @@ Seriously, so many actual working build systems and they had to come up with a n
 * Vastly complex and indecipherable path, packages, etc.
 * Wastefully downloads and builds components that are ALREADY INSTALLED ON THE MACHINE AND IN THE PATH (such as LLVM, Swig, etc.)
 * Impossible to configure for toolchains and build systems... I mean why the hell would you make it so you have to create 3 different sections for a toolchain? Why not a folder with one configuration file per toolchain/compiler set?
+__* BAZEL IGNORES THE CONFIGURATION FILES ANYWAY IT TURNS OUT, SINCE I CHANGED THEM ALL TO USE THE VS2017 DIRECTORY AND FILES BUT IN THE bazel-out and bazel-tensorflow directories it ignores the changes and goes back to VS2015 build tools __
 
-My suggestion for Google, drop Bazel completely or give it a total rethink.
+My suggestion for Google, drop Bazel completely or give it a total rethink and put it in the trash, shred the source code and pretend it never existed.
