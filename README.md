@@ -5,10 +5,13 @@ __All are compiled with CUDA 10.0__
 
 | Date | Link | Python Version | TF API Version | CUDA Compat |
 |------|------|----------------|----------------|-------------|
+| 2019-01-11 | N/A (No longer compiles) | Python 3.7.2 | v1 | 3.5,6.1,7.0 |
+| 2019-01-11 | N/A (No longer compiles) | Python 3.6.6 | v1 | 3.5,6.1,7.0 |
 | 2019-01-08 | [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ) | Python 3.7.2 | v1 | 6.1 |
 | 2019-01-07 | [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg) | Python 3.6.6 | v1 | 6.1 |
 
 ### I REPEAT, THESE ARE COMPILED WITH CUDA 10.0 ###
+Check your CUDA compatibility, I used 6.1 because I have a nVidia 1080 GTX Ti.
 
 No CUDA 9.0 or 9.2.
 Somewhere in the commits of Tensorflow they updated it to CUDA 10.0 and later version of cuDNN, so you may have to get these.
