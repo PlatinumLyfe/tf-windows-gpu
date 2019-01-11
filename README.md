@@ -18,7 +18,7 @@ Somewhere in the commits of Tensorflow they updated it to CUDA 10.0 and later ve
 
 Also they are compiled for Python 3.6.6 and Python 3.7.2, but I may be dropping compiling for 3.6.6 soon since 3.7.2 seems a bit quicker.
 
-These are compiled with /favour:INTEL64, /fp:precise, /arch:AVX, /Ox, /DNOGDI, etc.
+These are compiled with /fp:fast, /arch:AVX, /Ox, /DNOGDI, etc.
 
 They are also compiled using the later headers and libraries for MSVC 2017 (or should be at least) by changing the include path from the standard C:\Program Files (x86)\Microsoft Visual Studio 14.0\ to the 2017 Enterprise folder for Visual C++.
 
