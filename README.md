@@ -38,7 +38,7 @@ IF EXIST "Z:\Program Files\Git" (
   mv "z:\Program Files\Git" "Z:\Program Files\Git_"
 )
 
-bazel --output_base=Z:/bazel/output_base --output_user_root=z:/bazel/output_user_root --define=no_tensorflow_py_deps=true --config=opt //tensorflow/tools/pip_package:build_pip_package
+bazel --define=no_tensorflow_py_deps=true --config=opt //tensorflow/tools/pip_package:build_pip_package
 
 IF EXIST "Z:\Program Files\Git_" (
   mv "Z:\Program Files\Git" "Z:\Program Files\Git_"
