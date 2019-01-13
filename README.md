@@ -19,11 +19,11 @@ Now open .tf_configure.bazelrc
 Start the "x64 Native Tools Command Prompt" from Visual Studio, cause you will need variables from here.
 
 Add the following lines in there:
-
+```
 build --action_env PATH="<COPY EVERYTHING IN YOUR PATH ENVIRONMENT FROM THE x64 NATIVE TOOLS COMMAND PROMPT HERE>"
 build --copt=-DNOGDI --host_copt=-DNOGDI
 build --action_env BAZEL_VS="<YOUR BAZEL VS ENVIRONMENT VARIABLE>"
-
+```
 Search the repo and find any reference to "Microsoft Visual Studio 14" and replace this to point to the relevant paths under your VS2017 install.
 
 Then start the build... except...
