@@ -1,12 +1,63 @@
 # tf-windows-gpu
 Tensorflow Nightly GPU is not being updated for Windows, so here's a repo with links to some compiled wheels I made myself.
 
+## GUIDE ON BUILDING YOUR OWN TENSORFLOW ON WINDOWS WITH VS2017 ##
+Follow the ordinary build instructions for building tensorflow from source on windows found here:
+[https://www.tensorflow.org/install/source_windows](https://www.tensorflow.org/install/source_windows)
+
+(You will need msys64 and all that jazz)
+
+Make sure bazel is in your PATH variable and set BAZEL_VS to wherever your VS 2017 is installed 
+BAZEL_VS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise
+
+Run the `python configure.py` in the repo directory
+
+Answer the questions as honestly as you can
+
+Now open .tf_configure.bazelrc
+
+Start the "x64 Native Tools Command Prompt" from Visual Studio, cause you will need variables from here.
+
+Add the following lines in there:
+
+build --action_env PATH="<COPY EVERYTHING IN YOUR PATH ENVIRONMENT FROM THE x64 NATIVE TOOLS COMMAND PROMPT HERE>"
+build --copt=-DNOGDI --host_copt=-DNOGDI
+build --action_env BAZEL_VS="<YOUR BAZEL VS ENVIRONMENT VARIABLE>"
+
+Search the repo and find any reference to "Microsoft Visual Studio 14" and replace this to point to the relevant paths under your VS2017 install.
+
+Then start the build... except...
+I have Git installed (I think Visual Studio installed it) and this creates issues and complaints about cygwin errors because the different cygwin dll's between msys and git.
+
+SO I USE THIS BATCH FILE TO START MY BUILD:
+```
+@ECHO OFF
+cd z:\repo\github\tensorflow\tensorflow
+
+IF EXIST "Z:\Program Files\Git" (
+  mv "z:\Program Files\Git" "Z:\Program Files\Git_"
+)
+
+bazel --output_base=Z:/bazel/output_base --output_user_root=z:/bazel/output_user_root --define=no_tensorflow_py_deps=true --config=opt //tensorflow/tools/pip_package:build_pip_package
+
+IF EXIST "Z:\Program Files\Git_" (
+  mv "Z:\Program Files\Git" "Z:\Program Files\Git_"
+)
+```
+
+Now once the build has started and bazel starts compiling a few things, I KILL THE PROCESS WITH `CTRL-C`
+
+Do a search in the folder created in your home directory `_bazel_username` (example: `C:\users\username\_bazel_username\`) for anything pointing to "Microsoft Visual Studio 14" and, again, replace it with the relevant paths to VS2017.
+
+NOW BAZEL WILL ACTUALLY COMPILE TENSORFLOW FOR ME...
+
+Also, there is an environment variable for BAZEL_LLVM but I don't think they've configured the toolchain for it so I couldn't get CLANG to work from LLVM instead.
+
 __All are compiled with CUDA 10.0__  
 
 | Date | Link | Python Version | TF API Version | CUDA Compat |
 |------|------|----------------|----------------|-------------|
-| 2019-01-11 | N/A (No longer compiles) | Python 3.7.2 | v1 | 3.5,6.1,7.0 |
-| 2019-01-11 | N/A (No longer compiles) | Python 3.6.6 | v1 | 3.5,6.1,7.0 |
+| 2019-01-12 | [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/) * Still uploading * | Python 3.7.2 | v1 | 6.1 |
 | 2019-01-08 | [tensorflow-cp37-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZu9BlMiHubpm0UCQ) | Python 3.7.2 | v1 | 6.1 |
 | 2019-01-07 | [tensorflow-cp36-cp37m-win_amd64.whl](https://1drv.ms/u/s!AiUbe609f8iritZtpQtCf5k__Ad2Qg) | Python 3.6.6 | v1 | 6.1 |
 
